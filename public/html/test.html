@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Insert into DB</title>
+    <link href="../css/bootstrap.css" rel="stylesheet" type="text/css">
+    <link href="../css/Test_input.css" rel="stylesheet" type="text/css">
+   <!--  <script src="../server.js"></script>-->
+</head>
+<body>
+
+<nav class="container navbar navbar-expand-lg navbar-light bg-light" style="margin-bottom: 30px">
+    <a class="navbar-brand" href="#">G A M E</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="/">Home </span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="test">Test <span class="sr-only">(current) </a>
+            </li>
+        </ul>
+        <form class="form-inline my-2 my-lg-0">
+            <div class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Choose a player
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="#">Player1</a>
+                    <a class="dropdown-item" href="#">Player2</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="#">List of players</a>
+                </div>
+            </div>
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Login</button>
+        </form>
+    </div>
+</nav>
+
+
+<form method="post" action="/formData" class="container" >
+    <div class="form-group col-sm-3 col-md-3">
+        <label for="card_id">Card ID</label>
+        <input type="text" id="card_id" name="card_id" class="form-control" >
+        <small id="Help" class="form-text text-muted">We are not controling unique of ID.</small>
+    </div>
+    <div class="form-group col-sm-3 col-md-3 ">
+        <label for="card_name">Card name</label>
+        <input type="text" id="card_name" name="card_name" class="form-control">
+    </div>
+
+    <div class="col-sm-3 col-md-3">
+        <button type="submit" class="btn btn-outline-success float-md-right" >Insert</button>
+    </div>
+
+</form>
+
+
+
+<script src="../js/jquery.js"></script>
+<script src="../js/bootstrap.js"></script>
+
+
+</body>
+</html>
+
+<!-- TESTOVACI FORMULAR
+
+<div id="odstup">
+<form method="post" action="/ulozform">
+
+    <input type="text" id="field1" name="field1">
+    <button type="submit" > Store </button>
+
+</form>
+</div>
+-->
