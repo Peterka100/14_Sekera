@@ -15,16 +15,12 @@ app.get('/test', function (req, res) {
 });
 
 
-app.listen(3000, function () {
-    console.log('server is up and running on port 3000');
-});
-
-
-/*
 var port = process.env.OPENSHIFT_NODEJS_PORT || 8080
 var ip   = process.env.OPENSHIFT_NODEJS_IP || '127.0.0.1'
+
+console.log(port);
+console.log(ip);
 
 app.listen(port, ip, function () {
     console.log('Server running on http://%s:%s', ip, port);
 });
-*/
