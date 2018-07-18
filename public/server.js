@@ -22,5 +22,5 @@ var ip   = process.env.OPENSHIFT_NODEJS_IP || '0.0.0.0';
 
 
 app.listen(port, ip, function () {
-    console.log('Server running on http://%s:%s', ip, port);
+    console.log('SServer running on http://%s:%s', ip, port);
 });
