@@ -14,6 +14,10 @@ app.get('/test', function (req, res) {
     res.sendFile('test.html', {root: path.join(__dirname, './public/html')});
 });
 
+app.get('/login', function (req, res) {
+    res.sendFile('login.html', {root: path.join(__dirname, './public/html')});
+});
+
 
 var port = process.env.OPENSHIFT_NODEJS_PORT || 8080
 var ip   = process.env.OPENSHIFT_NODEJS_IP || '0.0.0.0'
