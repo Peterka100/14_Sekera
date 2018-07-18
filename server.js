@@ -15,7 +15,7 @@ app.get('/test', function (req, res) {
 });
 
 app.get('/login', function (req, res) {
-    res.sendFile('login.html', {root: path.join(__dirname, './public/html')});
+    res.sendFile('Login.html', {root: path.join(__dirname, './public/html')});
 });
 
 
