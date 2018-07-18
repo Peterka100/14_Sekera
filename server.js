@@ -7,11 +7,11 @@ app.use(express.static(__dirname ));
 
 
 app.get('/', function (req, res) {
-    res.sendFile('Card.html', {root: path.join(__dirname, './public/html')});
+    res.sendFile('Card.html', {root: path.join(__dirname, './html')});
 });
 
 app.get('/test', function (req, res) {
-    res.sendFile('test.html', {root: path.join(__dirname, './public//html')});
+    res.sendFile('test.html', {root: path.join(__dirname, './html')});
 });
 
 
