@@ -20,9 +20,6 @@ app.get('/test', function (req, res) {
     res.sendFile('test.html', {root: path.join(__dirname, './public/html')});
 });
 
-app.get('/login', function (req, res) {
-    res.sendFile('Login.html', {root: path.join(__dirname, './public/html')});
-});
 
 app.get('/admin', function (req, res) {
     if (session.uniqueID) {
