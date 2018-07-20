@@ -7,11 +7,6 @@ const sessions = require('express-session'); // pro umožnění práce se sessio
 var app = express();
 var session;
 
-app.use(sessions({
-    secret: 'hello12345',
-    resave: false,
-    saveUninitialized: true
-}));
 
 app.use(express.static(__dirname ));
 app.use(bodyParser.urlencoded({extended:true})); // starši zapis byval app.use(bodyParser.json()); ale je to depricated v blizkej dobe
@@ -30,22 +25,22 @@ app.get('/login', function (req, res) {
     session = req.session;
     if (session.uniqueID) {
         res.redirect('/redirects');
-    }
-    res.sendFile('login.html', {root: path.join(__dirname, './html')});
+    } else
+    res.sendFile('login.html', {root: path.join(__dirname, './public/html')});
 });
 
 app.get('/admin', function (req, res) {
     if (session.uniqueID) {
         console.log(session.uniqueID);
         console.log(session.passwordID);
-        res.sendFile('Admin.html', {root: path.join(__dirname, './html')});
+        res.sendFile('Admin.html', {root: path.join(__dirname, './public/html')});
     } else
         res.redirect('/redirects');
 });
 
 app.get('/logout', function(req,res){
     req.session.destroy();
-    res.sendFile('/logout.html', {root: path.join(__dirname, './html')});
+    res.sendFile('/logout.html', {root: path.join(__dirname, './public/html')});
 });
 
 app.post('/login', function(req,res){
