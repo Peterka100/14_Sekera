@@ -20,6 +20,7 @@ app.get('/login', function (req, res) {
     res.sendFile('Login.html', {root: path.join(__dirname, './public/html')});
 });
 
+/*
 //DB
 var con = mysql.createConnection({
     host: "mysql://mysql:3306",
@@ -37,7 +38,7 @@ con.connect(function(err) {
         console.log("Table created");
     });
 });
-
+*/
 
 //SERVER
 var port = process.env.OPENSHIFT_NODEJS_PORT || 8080
