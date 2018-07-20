@@ -7,6 +7,12 @@ const sessions = require('express-session'); // pro umožnění práce se sessio
 var app = express();
 var session;
 
+app.use(sessions({
+    secret: 'hello12345',
+    resave: false,
+    saveUninitialized: true
+}));
+
 app.use(express.static(__dirname ));
 app.use(bodyParser.urlencoded({extended:true})); // starši zapis byval app.use(bodyParser.json()); ale je to depricated v blizkej dobe
 
