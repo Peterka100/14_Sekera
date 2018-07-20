@@ -20,6 +20,13 @@ app.get('/test', function (req, res) {
     res.sendFile('test.html', {root: path.join(__dirname, './public/html')});
 });
 
+app.get('/login', function (req, res) {
+    session = req.session;
+    if (session.uniqueID) {
+        res.redirect('/redirects');
+    }
+    res.sendFile('login.html', {root: path.join(__dirname, './html')});
+});
 
 app.get('/admin', function (req, res) {
     if (session.uniqueID) {
