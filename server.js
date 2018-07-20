@@ -50,7 +50,14 @@ app.post('/login', function(req,res){
     res.redirect('/redirects');
 });
 
-
+app.get('/redirects', function(req,res){
+    session = req.session;
+    if(session.uniqueID){
+        res.redirect('/admin')
+    } else {
+        res.end ('Neplatny login <a href="/logout">Kill session </a>');
+    }
+});
 
 
 
