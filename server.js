@@ -12,6 +12,14 @@ app.use(express.static(__dirname ));
 app.use(bodyParser.urlencoded({extended:true})); // starši zapis byval app.use(bodyParser.json()); ale je to depricated v blizkej dobe
 
 
+//SESSION
+app.use(sessions({
+    secret: 'hello12345',
+    resave: false,
+    saveUninitialized: true
+}));
+
+
 //FE
 app.get('/', function (req, res) {
     res.sendFile('Card.html', {root: path.join(__dirname, './public/html')});
@@ -20,6 +28,7 @@ app.get('/', function (req, res) {
 app.get('/test', function (req, res) {
     res.sendFile('test.html', {root: path.join(__dirname, './public/html')});
 });
+
 
 app.get('/login', function (req, res) {
     session = req.session;
