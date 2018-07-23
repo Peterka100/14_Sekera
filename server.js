@@ -52,16 +52,15 @@ app.get('/logout', function(req,res){
     res.sendFile('/logout.html', {root: path.join(__dirname, './public/html')});
 });
 
-app.post('/public/html/login', function(req,res){
+app.post('/login', function(req,res){
+    // res.send(JSON.stringify(req.body));
     session = req.session;
-    if (session.uniqueID) {
-        res.redirect('/redirects');
-    }
     if (req.body.Username == 'peter' && req.body.Password == 'peter') {
         session.uniqueID = req.body.Username;
         session.passwordID = req.body.Password;
-    }
-    res.redirect('/redirects');
+        res.sendFile('/admin.html', {root: path.join(__dirname, './html')});
+    } else
+        res.redirect('/redirects');
 });
 
 app.get('/redirects', function(req,res){
@@ -74,7 +73,16 @@ app.get('/redirects', function(req,res){
 });
 
 
+//SERVER
+var port = process.env.OPENSHIFT_NODEJS_PORT || 8080
+var ip   = process.env.OPENSHIFT_NODEJS_IP || '0.0.0.0'
 
+console.log(port);
+console.log(ip);
+
+app.listen(port, ip, function () {
+    console.log('Server running on http://%s:%s', ip, port);
+});
 
 
 /*
@@ -97,14 +105,3 @@ con.connect(function(err) {
     });
 });
 */
-
-//SERVER
-var port = process.env.OPENSHIFT_NODEJS_PORT || 8080
-var ip   = process.env.OPENSHIFT_NODEJS_IP || '0.0.0.0'
-
-console.log(port);
-console.log(ip);
-
-app.listen(port, ip, function () {
-    console.log('Server running on http://%s:%s', ip, port);
-});
