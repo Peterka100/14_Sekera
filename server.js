@@ -67,7 +67,7 @@ app.post('/login', function(req,res){
 app.get('/redirects', function(req,res){
     session = req.session;
     if(session.uniqueID){
-        res.redirect('/admin')
+        res.redirect('/Admin.html')
     } else {
         res.end ('Neplatny login <a href="/logout">Kill session </a>');
     }
