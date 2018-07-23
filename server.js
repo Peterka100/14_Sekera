@@ -9,7 +9,7 @@ var session;
 
 
 app.use(express.static(__dirname ));
-app.use(bodyParser.urlencoded({extended:true})); // starši zapis byval app.use(bodyParser.json()); ale je to depricated v blizkej dobe
+app.use(bodyParser.urlencoded({extended:true})) // starši zapis byval app.use(bodyParser.json()); ale je to depricated v blizkej dobe
 
 
 //SESSION
