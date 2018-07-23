@@ -52,7 +52,7 @@ app.get('/logout', function(req,res){
     res.sendFile('/logout.html', {root: path.join(__dirname, './public/html')});
 });
 
-app.post('/login', function(req,res){
+app.post('/public/html/login', function(req,res){
     session = req.session;
     if (session.uniqueID) {
         res.redirect('/redirects');
