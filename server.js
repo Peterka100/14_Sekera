@@ -53,7 +53,6 @@ app.get('/logout', function(req,res){
 });
 
 app.post('/login', function(req,res){
-    // res.send(JSON.stringify(req.body));
     session = req.session;
     if (req.body.Username == 'peter' && req.body.Password == 'peter') {
         session.uniqueID = req.body.Username;
